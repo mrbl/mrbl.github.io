@@ -1,2 +1,2 @@
 # mrbl.github.io
-<a href="/tank/index.html">Tanks game</a>
+<a href="/tanks">Tanks game</a>
