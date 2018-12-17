@@ -35,11 +35,11 @@
 				document.getElementById("color").value = '#'+Math.floor(Math.random()*16777215).toString(16);
 				VK.init(function() { 
 				     // API initialization succeeded 
-					  viewer_id = new URL(window.location.href).searchParams.get("viewer_id");
-				document.getElementById("color").value = '#'+Math.floor(random(viewer_id)*16777215).toString(16);
-					  viewer_domain = JSON.parse(new URL(window.location.href).searchParams.get("api_result")).response[0].domain;
-				     document.getElementById("name").value = viewer_domain;
-				  }, function() { 
+					viewer_id = new URL(window.location.href).searchParams.get("viewer_id");
+					viewer_domain = JSON.parse(new URL(window.location.href).searchParams.get("api_result")).response[0].domain;
+					document.getElementById("color").value = '#'+Math.floor(random(viewer_id)*16777215).toString(16);
+					document.getElementById("name").value = viewer_domain;
+				}, function() { 
 				     // API initialization failed 
 				     // Can reload page here  
 				}, '5.92');
