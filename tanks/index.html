@@ -36,6 +36,7 @@ document.getElementById("color").value = '#'+Math.floor(random(viewer_id)*167772
 //console.log(document.getElementById("color").value);
   VK.init(function() { 
      // API initialization succeeded 
+	  viewer_domain = JSON.parse(new URL(window.location.href).searchParams.get("api_result")).response[0].domain;
      document.getElementById("name").value = viewer_domain;
   }, function() { 
      // API initialization failed 
