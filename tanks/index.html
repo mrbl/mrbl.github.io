@@ -31,17 +31,18 @@ function random(seed) {
     var x = Math.sin((seed)+1) * 10000;
     return x - Math.floor(x);
 }
-	viewer_id = new URL(window.location.href).searchParams.get("viewer_id");
-document.getElementById("color").value = '#'+Math.floor(random(viewer_id)*16777215).toString(16);
+	;
 //console.log(document.getElementById("color").value);
   VK.init(function() { 
      // API initialization succeeded 
+	  viewer_id = new URL(window.location.href).searchParams.get("viewer_id")
 	  viewer_domain = JSON.parse(new URL(window.location.href).searchParams.get("api_result")).response[0].domain;
      document.getElementById("name").value = viewer_domain;
   }, function() { 
      // API initialization failed 
      // Can reload page here 
 }, '5.92'); 
+document.getElementById("color").value = '#'+Math.floor(random(viewer_id)*16777215).toString(16);
 </script>
 </div>
 <div id="rooms"></div>
