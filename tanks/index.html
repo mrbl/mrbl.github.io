@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>tank</title>
+<style>
+#connect .title {
+	display: inline-block;
+	width: 65px;
+}
+</style>
+</head>
+
+<body>
+<div id="connect">
+<form>
+<span class="title">Name:</span>
+
+<input id="name" type="text" required pattern="[A-Za-z0-9_]{6,}"><br>
+<span class="title">Color:</span>
+<input id="color" type="color"><br>
+<span class="title">Serever:</span>
+<input id="server" type="text" title="Оставить пустым для подключения к тестовому серверу"><br>
+<input type="submit" value="Connect">
+</form>
+<script>
+function random(seed) {
+    var x = Math.sin((seed)+1) * 10000;
+    return x - Math.floor(x);
+}
+document.getElementById("color").value = '#'+Math.floor(random("0")*16777215).toString(16);
+console.log(document.getElementById("color").value);
+//console.log(document.getElementById("color").value);
+</script>
+</div>
+<div id="rooms"></div>
+<div id="game"></div>
+</body>
+</html>
