@@ -25,8 +25,8 @@
 <input type="submit" value="Connect">
 </form>
 <script>
-var viewer_id = 1;
-var viewer_domain = 0; 
+var viewer_id = Math.floor(Math.random()*1000);
+var viewer_domain = viewer_id; 
 function random(seed) {
     var x = Math.sin((seed)+1) * 10000;
     return x - Math.floor(x);
