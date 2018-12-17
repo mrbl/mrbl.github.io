@@ -23,8 +23,8 @@
 				<input type="submit" value="Connect">
 			</form>
 			<script>
-				var viewer_id = Math.floor(Math.random()*1000);
-				var viewer_domain = viewer_id; 
+				var viewer_id = 0;
+				var viewer_domain = 0; 
 				function random(seed) {
 				    var x = Math.sin((seed)+1) * 10000;
 				    return x - Math.floor(x);
@@ -39,9 +39,9 @@
 				     document.getElementById("name").value = viewer_domain;
 				  }, function() { 
 				     // API initialization failed 
-				     // Can reload page here 
-				}, '5.92'); 
-				document.getElementById("color").value = '#'+Math.floor(random(viewer_id)*16777215).toString(16);
+				     // Can reload page here  
+				document.getElementById("color").value = '#'+Math.floor(Math.random()*16777215).toString(16);
+				}, '5.92');
 			</script>
 		</div>
 		<div id="rooms"></div>
