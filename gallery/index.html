@@ -22,8 +22,11 @@ text-align-last: center;}
  <script src="https://vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
  <script>
  document.addEventListener("DOMContentLoaded", function() {
+	 var body = document.body;
+	 var height = Math.max( body.scrollHeight, body.offsetHeight );
 	//document.body.addEventListener("resize", function() {
-		VK.callMethod("resizeWindow", 795, document.body.height);
+		VK.callMethod("resizeWindow", 795, height);
+		console.log("body height: " + height);
 	//});
  });
  </script>
