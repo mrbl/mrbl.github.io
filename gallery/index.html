@@ -20,6 +20,13 @@ text-align-last: center;}
 .hashtags { text-align: justify; text-align-last: justify; }
 </style>
  <script src="https://vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
+ <script>
+ document.addEventListener("DOMContentLoaded", function() {
+	//document.body.addEventListener("resize", function() {
+		VK.callMethod("resizeWindow", 795, document.body.height);
+	//});
+ });
+ </script>
 </head>
 <body>
 <div class="hashtags"><button class="hashtag">#Haruhi</button>
