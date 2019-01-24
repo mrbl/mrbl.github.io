@@ -9,19 +9,21 @@ outline: none;
 border: none;
 box-sizing: border-box;
 cursor: pointer;
-font-size: 18px;}
+font-size: 18px;
+text-align: center;
+text-align-last: center;}
 .hashtag:hover {background-color: #dfe6ed; color:#55677d;}
-.hashtag::before { content: " "; margin-right: 2px; border-radius: 5px; width: 20px; display: inline-block;}
-.include::before { content: "+" !important; color: green; font-weight: 900; background: #fff;}
-.exclude::before { content: "-" !important; color: red; font-weight: 900; background: #fff;}
+.hashtag::before { content: " "; margin-right: 2px; border-radius: 5px; width: 20px; display: inline-block; }
+.include::before { content: "+"; color: green; font-weight: 900; background: #fff; text-align: center;}
+.exclude::before { content: "-"; color: red; font-weight: 900; background: #fff;}
 .include, .exclude {background-color: #5181b8; color: #fff;}
-
+.hashtags { text-align: justify; text-align-last: justify; }
 </style>
-  <script src="https://vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
+ <script src="https://vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
 </head>
 <body>
-<div><button class="hashtag">#Haruhi</button>
-<button class="hashtag">#Mikuru</button>
+<div class="hashtags"><button class="hashtag">#Haruhi</button>
+<button class="hashtag include">#Mikuru</button>
 <button class="hashtag">#Yuki</button>
 <button class="hashtag">#Kyon</button>
 <button class="hashtag">#Itsuki</button>
