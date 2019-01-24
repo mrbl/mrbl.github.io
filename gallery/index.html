@@ -22,41 +22,50 @@ text-align-last: center;}
  <script src="https://vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
  <script>
  document.addEventListener("DOMContentLoaded", function() {
-	 var body = document.body;
-	 var height = Math.max( body.scrollHeight, body.offsetHeight );
-	//document.body.addEventListener("resize", function() {
-		VK.callMethod("resizeWindow", 795, height);
-		console.log("body height: " + height);
-	//});
+	var body = document.body;
+	var height = Math.max( body.scrollHeight, body.offsetHeight, body.clientHeight );
+	VK.callMethod("resizeWindow", 795, height+50);
+	console.log("body height: " + height);
  });
+ function hashtagClick(e) {
+	 if(e.classList.length == 1) {
+		 e.classList.add("include");
+	 } else if(e.classList[1] == "include") {
+		 e.classList.remove("include");
+		 e.classList.add("exclude");
+	 } else {
+		 e.classList.remove("include");
+		 e.classList.remove("exclude");
+	 }
+ }
  </script>
 </head>
 <body>
-<div class="hashtags"><button class="hashtag">#Haruhi</button>
-<button class="hashtag include">#Mikuru</button>
-<button class="hashtag">#Yuki</button>
-<button class="hashtag">#Kyon</button>
-<button class="hashtag">#Itsuki</button>
-<button class="hashtag">#Tsuruya</button>
-<button class="hashtag">#Ryoko</button>
-<button class="hashtag">#Emiri</button>
-<button class="hashtag">#Kunikida</button>
-<button class="hashtag">#Taniguti</button>
-<button class="hashtag">#imouto</button>
-<button class="hashtag">#Shamisen</button>
-<button class="hashtag">#Mori</button>
-<button class="hashtag">#Arakawa</button>
-<button class="hashtag">#CCP</button>
-<button class="hashtag">#Sasaki</button>
-<button class="hashtag">#Kyouko</button>
-<button class="hashtag">#SuouKuyou</button>
-<button class="hashtag">#Fujiwara</button>
-<button class="hashtag">#Yasumi</button>
-<button class="hashtag">#SCP</button>
-<button class="hashtag">#realnishinomiya</button>
-<button class="hashtag">#Kyonko</button>
-<button class="hashtag include">#gender</button>
-<button class="hashtag exclude">#moments</button>
+<div class="hashtags"><button onclick="hashtagClick(this)" class="hashtag">#Haruhi</button>
+<button onclick="hashtagClick(this)" class="hashtag include">#Mikuru</button>
+<button onclick="hashtagClick(this)" class="hashtag">#Yuki</button>
+<button onclick="hashtagClick(this)" class="hashtag">#Kyon</button>
+<button onclick="hashtagClick(this)" class="hashtag">#Itsuki</button>
+<button onclick="hashtagClick(this)" class="hashtag">#Tsuruya</button>
+<button onclick="hashtagClick(this)" class="hashtag">#Ryoko</button>
+<button onclick="hashtagClick(this)" class="hashtag">#Emiri</button>
+<button onclick="hashtagClick(this)" class="hashtag">#Kunikida</button>
+<button onclick="hashtagClick(this)" class="hashtag">#Taniguti</button>
+<button onclick="hashtagClick(this)" class="hashtag">#imouto</button>
+<button onclick="hashtagClick(this)" class="hashtag">#Shamisen</button>
+<button onclick="hashtagClick(this)" class="hashtag">#Mori</button>
+<button onclick="hashtagClick(this)" class="hashtag">#Arakawa</button>
+<button onclick="hashtagClick(this)" class="hashtag">#CCP</button>
+<button onclick="hashtagClick(this)" class="hashtag">#Sasaki</button>
+<button onclick="hashtagClick(this)" class="hashtag">#Kyouko</button>
+<button onclick="hashtagClick(this)" class="hashtag">#SuouKuyou</button>
+<button onclick="hashtagClick(this)" class="hashtag">#Fujiwara</button>
+<button onclick="hashtagClick(this)" class="hashtag">#Yasumi</button>
+<button onclick="hashtagClick(this)" class="hashtag">#SCP</button>
+<button onclick="hashtagClick(this)" class="hashtag">#realnishinomiya</button>
+<button onclick="hashtagClick(this)" class="hashtag">#Kyonko</button>
+<button onclick="hashtagClick(this)" class="hashtag include">#gender</button>
+<button onclick="hashtagClick(this)" class="hashtag exclude">#moments</button>
 </div>
 </body>
 </html>
