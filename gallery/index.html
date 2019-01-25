@@ -26,7 +26,7 @@ box-sizing: border-box;
 cursor: pointer;
 font-size: 18px; background-color: #5181b8; color: #fff; padding: 5px 10px; margin: 2px; border-radius: 4px; }
 .param button:hover { background-color: #5b88bd; }
-#results a {  margin: 5px; }
+#results a {  margin: 2px; }
 #results { text-align: justify; } 
 #results img { max-width: 185px; max-height: 185px; }
 </style>
@@ -52,8 +52,10 @@ document.getElementById('param').style.display = 'none';
 	for(var i=0; i<25; i++) {
 	addResult("#", "https://pp.userapi.com/c852136/v852136557/a26ad/IQMnKxU_K9Q.jpg", "ololo");
 	}
+	 setTimeout(function() {
 	var height = Math.max( body.scrollHeight, body.offsetHeight, body.clientHeight );
 	VK.callMethod("resizeWindow", 795, height+50);
+	 }, 200);
 	console.log("body height: " + height);
  });
  function hashtagClick(e) {
