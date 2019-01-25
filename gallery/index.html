@@ -16,21 +16,48 @@ text-align-last: center;}
 .hashtag::before { content: " "; margin-right: 2px; border-radius: 5px; width: 20px; display: inline-block; }
 .include::before { content: "+"; color: green; font-weight: 900; background: #fff; text-align: center;}
 .exclude::before { content: "-"; color: red; font-weight: 900; background: #fff;}
-.include, .exclude, .include:hover, .exclude:hover {background-color: #5181b8; color: #fff;}
+.include, .exclude {background-color: #5181b8; color: #fff;}
 .hashtags { text-align: justify; text-align-last: justify; }
-	@media (orientation: portrait) {
-		.hashtags { text-align: center; text-align-last: center; }
-	}
+.include:hover, .exclude:hover {background-color: #5b88bd;  color: #fff;}
+.param { text-align: center; margin: 5px; height: 35px;}
+.param button { outline: none;
+border: none;
+box-sizing: border-box;
+cursor: pointer;
+font-size: 18px; background-color: #5181b8; color: #fff; padding: 5px 10px; margin: 2px; border-radius: 4px; }
+.param button:hover { background-color: #5b88bd; }
+#results a {  margin: 5px; }
+#results { text-align: justify; } 
+#results img { max-width: 185px; max-height: 185px; }
 </style>
  <script src="https://vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
  <script>
+function addResult(url, img, text) {
+	var a = document.createElement("a");
+	a.href = url;
+	a.title = text;
+	a.innerHTML = '<img src="'+img+'" alt="'+text+'">';
+	document.getElementById("results").appendChild(a);
+}
+var include = [];
+var exclude = [];
+function searchClick() {
+include = Array.from(document.getElementsByClassName("include"));
+exclude = Array.from(document.getElementsByClassName("exclude"));
+document.getElementById('param').style.display = 'none'; 
+
+}
  document.addEventListener("DOMContentLoaded", function() {
 	var body = document.body;
+	for(var i=0; i<25; i++) {
+	addResult("#", "https://pp.userapi.com/c852136/v852136557/a26ad/IQMnKxU_K9Q.jpg", "ololo");
+	}
 	var height = Math.max( body.scrollHeight, body.offsetHeight, body.clientHeight );
 	VK.callMethod("resizeWindow", 795, height+50);
 	console.log("body height: " + height);
  });
  function hashtagClick(e) {
+	 document.getElementById("param").style.display = "block";
 	 if(e.classList.length == 1) {
 		 e.classList.add("include");
 	 } else if(e.classList[1] == "include") {
@@ -44,31 +71,41 @@ text-align-last: center;}
  </script>
 </head>
 <body>
-<div class="hashtags"><button onclick="hashtagClick(this)" class="hashtag">#Haruhi</button>
-<button onclick="hashtagClick(this)" class="hashtag">#Mikuru</button>
-<button onclick="hashtagClick(this)" class="hashtag">#Yuki</button>
-<button onclick="hashtagClick(this)" class="hashtag">#Kyon</button>
-<button onclick="hashtagClick(this)" class="hashtag">#Itsuki</button>
-<button onclick="hashtagClick(this)" class="hashtag">#Tsuruya</button>
-<button onclick="hashtagClick(this)" class="hashtag">#Ryoko</button>
-<button onclick="hashtagClick(this)" class="hashtag">#Emiri</button>
-<button onclick="hashtagClick(this)" class="hashtag">#Kunikida</button>
-<button onclick="hashtagClick(this)" class="hashtag">#Taniguti</button>
-<button onclick="hashtagClick(this)" class="hashtag">#imouto</button>
-<button onclick="hashtagClick(this)" class="hashtag">#Shamisen</button>
-<button onclick="hashtagClick(this)" class="hashtag">#Mori</button>
-<button onclick="hashtagClick(this)" class="hashtag">#Arakawa</button>
-<button onclick="hashtagClick(this)" class="hashtag">#CCP</button>
-<button onclick="hashtagClick(this)" class="hashtag">#Sasaki</button>
-<button onclick="hashtagClick(this)" class="hashtag">#Kyouko</button>
-<button onclick="hashtagClick(this)" class="hashtag">#SuouKuyou</button>
-<button onclick="hashtagClick(this)" class="hashtag">#Fujiwara</button>
-<button onclick="hashtagClick(this)" class="hashtag">#Yasumi</button>
-<button onclick="hashtagClick(this)" class="hashtag">#SCP</button>
-<button onclick="hashtagClick(this)" class="hashtag">#realnishinomiya</button>
-<button onclick="hashtagClick(this)" class="hashtag">#Kyonko</button>
-<button onclick="hashtagClick(this)" class="hashtag">#gender</button>
-<button onclick="hashtagClick(this)" class="hashtag">#moments</button>
+<div class="hashtags"><button onclick="hashtagClick(this)" class="hashtag exclude" title="Судзумия Харухи">#Haruhi</button>
+<button onclick="hashtagClick(this)" class="hashtag exclude" title="Асахина Микуру">#Mikuru</button>
+<button onclick="hashtagClick(this)" class="hashtag include" title="Нагато Юки">#Yuki</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Кён">#Kyon</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Коидзуми Ицки">#Itsuki</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Цуруя">#Tsuruya</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Чуруя">#Churuya</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Асакура Рёко">#Ryoko</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Кимидори Эмири">#Emiri</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Куникида">#Kunikida</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Танигути">#Taniguti</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Сестра Кёна">#imouto</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Сямисен">#Shamisen</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Мори">#Mori</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Аракава">#Arakawa</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Президент Компьютерно Клуба">#CCP</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Сасаки">#Sasaki</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Тачибана Кёко">#Kyouko</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Суо Куё">#SuouKuyou</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Фудживара">#Fujiwara</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Втахаши Ясуми">#Yasumi</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Президент Студсовета">#SCP</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Реальная Нисиномия">#realnishinomiya</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Кёнко">#Kyonko</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Гендер-бендер">#gender</button>
+<button onclick="hashtagClick(this)" class="hashtag" title="Моменты">#moments</button>
 </div>
+<div class="param">
+<div id="param"><button onClick="searchClick();">Показать</button><!--
+<input type="checkbox" id="chkb1"> <label for="chkb1">Скрывать с отметкой "Мне нравится"</label>
+<input type="checkbox" id="chkb2"> <label for="chkb2">Скрывать просмотренные</label>-->
+</div>
+</div>
+<div id="results">
+</div>
+<div id="bottom"> </div>
 </body>
 </html>
