@@ -20,7 +20,10 @@ function ready() {
 	maxY = Math.floor(cnv.height / 18)-1;
 	document.addEventListener('touchstart', handleTouchStart, false);        
 	document.addEventListener('touchmove', handleTouchMove, false);
-	newSnake();
+	if(snake.length < 3) {
+		newSnake();
+		timerId = setInterval(move, 150);
+	}
 }
 var cnv = null;
 var ctx = null;
