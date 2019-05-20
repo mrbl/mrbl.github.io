@@ -20,6 +20,7 @@ function ready() {
 	maxY = Math.floor(cnv.height / 18)-1;
 	document.addEventListener('touchstart', handleTouchStart, false);        
 	document.addEventListener('touchmove', handleTouchMove, false);
+	alert("Управление:\n W A S D или ↑ ← ↓ →");
 	if(snake.length < 3) {
 		newSnake();
 		timerId = setInterval(move, 150);
